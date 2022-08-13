@@ -257,8 +257,53 @@
 - 浅拷贝：就是将一个对象的内存地址的复制给另一个对象。（**类似就给个别墅地址**）
 - 深拷贝：先新建一个空对象，内存中创建一个新的地址， 然后把被复制对象的所有可枚举的属性方法一一复制过来。（**类似双拼别墅，地址不一样，但是家里面的的东西都一模一样**）
 
-- 实现深拷贝
+
+- 实现浅拷贝
+    ```js
+    function clone(obj) {
+        const newobj = {};
+        for (const key in obj) {
+            newobj[key] = obj[key];
+        }
+        return newobj;
+    }
+    ```
+
+- **实现深拷贝**
     1. 递归
+        ```js
+        // 处理symbol Reflect.ownKeys返回一个由自生属性生成的数组
+        const sy = Symbol("a")
+        const a = {name:"a",age:12}
+        a[sy] = "132"
+        function deepclone3(target) {
+            if (target instanceof RegExp) {
+                return new RegExp(target);
+            }
+            if (target instanceof Date) {
+                return new Date(target);
+            }
+            if (target === null) {
+                return target;
+            }
+            if (typeof target !== "object") {
+                return target;
+            }
+            const clone = new target.constructor();
+            Reflect.ownKeys(target).forEach((key) => {
+                // key  name、age、Symbol(a)
+                clone[key] = deepclone3(target[key]);
+            });
+            return clone;
+        }
+        ```
+    2. 第三方库lodash中的cloneDeep()方法
+
+    3. ~~JSON.parse(JSON.stringify(obj))~~，只能深拷贝number、string、boolean和普通的对象
+        - 对象里面有时间类型 -> 字符串类型
+        - 对象里面有undefined和Function ， 直接丢失
+        - 对象里面有NaN、Infinity和-Infinity，都变为null
+        - 对象循环引用报错
 
 
 ## 从浏览器输入url到页面响应结束，这个过程是怎样的？js会阻塞文档渲染吗？
