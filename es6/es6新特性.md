@@ -55,6 +55,9 @@
 - 新增方法
     - Object.is()：判断两个值是否为同一个值。`Object.is(1,true) // false`
     - Object.assign()：将所有 可枚举 和 自有的 属性从一个或多个源对象复制到目标对象，返回修改后的对象。
+    - Object.entries()，方法返回一个给定对象自身可枚举属性的**键值对数组**
+    - Object.keys(obj): 返回一个数组，包括对象自身的（不含继承的）所有可枚举属性（不含 Symbol 属性）的键名。
+    - Reflect.ownKeys(obj): 返回一个数组，什么都可以返回。
 
 ## Module导入模块
 

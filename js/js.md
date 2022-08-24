@@ -308,3 +308,61 @@
 
 ## 从浏览器输入url到页面响应结束，这个过程是怎样的？js会阻塞文档渲染吗？
 
+
+## call、bind、apply
+
+- call 方法接受的是**若干个参数列表**，而 apply 接收的是**一个**包含多个参数的数组。都是立即执行
+- bind 返回值是一个函数，并且需要调用才能执行
+
+
+- 实现call
+    ```js
+    
+    ```
+
+## DOM BOM
+
+- DOM：DOM又称文档对象模型，它是HTML和XML文档的编程接口，它主要描述了一些我们使用JS处理网页内容的方法和接口，它的目标是网页内容
+
+- BOM：BOM又称浏览器对象模型，它主要用来描述一些与浏览器行为相关的接口和方法，比如我们利用JS调整浏览器窗口大小、标签页跳转等等，这些都是BOM对象。
+    1. window对象
+        - window.top：顶层窗口，即最外层窗口
+        - window.parent：当前窗口的父窗口，如果当前窗口即顶层窗口，则window.top=window.parent。
+        - self：当前窗口
+        - screenLeft：窗口距离屏幕左侧的距离
+        - screenTop：窗口距离屏幕顶部的距离
+        - moveTo：将窗口移动到指定坐标
+        - moveBy：将窗口向指定方向移动指定像素值
+        - innerWidth，innerHeight，outerWidth，outerHeight
+    2. location对象
+        - location对象既是window的属性，也是document的属性
+        - search：url中包括？在内后后面的内容
+        - assign：接收一个url地址，它会让我们的网页立即启动导航到新的url，而且还会再浏览器历史记录中增加一条记录。
+        - href：当前url地址
+    3. navigator对象：浏览器的基本信息，appName浏览器全名，appVersion浏览器版本
+    4. screen对象：客户端的信息，屏幕像素高度、宽度...
+    5. history对象
+        - go：控制浏览器的前进后退，它的参数为一个数字
+        - pushState：改变浏览器URL的时候不会加载新的页面，让我们的url改变时不刷新页面.
+
+## 遍历对象
+
+- 遍历全部
+    - for in  遍历对象的所有可枚举属性，包括**对象本身的和对象继承来的属性**
+    - Object.entries() 返回一个嵌套数组，数组内包括了属性名与属性值
+
+- 遍历属性
+    - Reflect.ownKeys() 对象的所有属性
+    - Object.keys() 遍历到所有对象本身的可枚举属性，但是其返回值为数组，**不遍历被继承的属性**
+    - Object.getOwnPropertyNames() 返回对象得所有属性，包括了不可枚举属性
+
+- 遍历属性值
+    - Object.values() 属性值构成的数组
+    - Object.getOwnPropertySymbols() 返回对象内的所有Symbol属性
+
+## DOM相关操作
+
+- 节点创建型API
+    - **createElement**通过传入指定的一个标签名来创建一个元素，只是创建出来，并未添加到HTML文档中，要调用appendChild或insertBefore等方法将其添加到HTML文档树中。
+    - 
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>border + clip-path + linear-gradient都可以</title>
+        <style>
+            .div {
+                /* div宽高度取消 */
+                width: 0px;
+                height: 0px;
+                /* 上的三角形去掉，旁边的透明 */
+                border-bottom: 50px solid #66ffcc;
+                border-left: 50px solid transparent;
+                border-right: 50px solid transparent;
+            }
+
+            /* 倒三角形，取消（对边）底边的三角形*/
+            .div1 {
+                /* div宽高度取消 */
+                width: 0px;
+                height: 0px;
+                border-top: 50px solid #66ffcc;
+                border-left: 50px solid transparent;
+                border-right: 50px solid transparent;
+            }
+
+            /* 左三角形，只需要把（对边）右边的三角形去掉 */
+            /* 右三角形，只需要把（对边）左边的三角形去掉 */
+        </style>
+    </head>
+    <body>
+        <!-- <div class="div"></div> -->
+        <div class="div1"></div>
+    </body>
+</html>

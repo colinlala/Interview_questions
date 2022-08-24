@@ -1,3 +1,17 @@
+## html5新特性
+
+- 语义化更好的标签元素
+    - article、aside、header、footer、figure、section、nav
+    - video、audio、canvas...
+- 新增的API
+    - **Canvas**：首先获取canvas元素的上下文对象，然后使用该上下文对象中的绘图功能进行绘制。
+    - **SVG**：SVG是html5的另一项图形功能，是一种标准的矢量图形
+    - **音频和视频**：2大好处,一是作为浏览器原生支持的功能，新的audio和video元素无需安装；二是媒体元素向web页面提供了通用、集成和可脚本化控制的API。
+    - **Geolocation**：可以请求用户共享他们的位置
+    - **XMLHttpRequest Level2**：改进了跨源XMLHttpRequest和进度事件，XMLHttpRequest Level2通过CORS实现了跨源XMLHttpRequest。
+    - **WebSockets**：要连接远程主机，只需新建一个WebSocket实例，提供希望连接的对端URL。
+    - **Web Storage API**：sessionStorage(保存在session中，浏览器关闭，数据消失)、localStorage(保存在客户端本地，除非手动删除，否则一直保存)
+
 ## disabled 和 readonly 的区别？
 
 - readonly：元素的只读属性，可以**防止用户对值进行修改**。 但用户仍然可以使用 tab 键切换到该字段，还可以选中或拷贝其文本。 在表单组件 input 中使用 readonly，内容会随着表单提交。

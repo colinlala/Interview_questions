@@ -70,33 +70,6 @@
 //     );
 // }
 // console.log(getDateTime());
-const sy = Symbol("a")
-
-const a = {name:"a",age:12}
-a[sy] = "132"
-
-const aee = {
-	data: new Date()
-}
- 
-function deepclone3(target) {
-	if (target instanceof RegExp) {
-		return new RegExp(target);
-	}
-	if (target instanceof Date) {
-		return new Date(target);
-	}
-	if (target === null) {
-		return target;
-	}
-
-	if (typeof target !== "object") {
-		return target;
-	}
-	const clone = new target.constructor();
-	Reflect.ownKeys(target).forEach((key) => {
-		clone[key] = deepclone3(target[key]);
-	});
-	return clone;
-}
-console.log(deepclone3(aee));
+let a = [1,2,3,4]
+let b = [2,3,4,5]
+console.log([...new Set([...a,...b])]);
