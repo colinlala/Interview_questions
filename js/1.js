@@ -70,6 +70,12 @@
 //     );
 // }
 // console.log(getDateTime());
-let a = [1,2,3,4]
-let b = [2,3,4,5]
-console.log([...new Set([...a,...b])]);
+
+
+// let a = [1,2,3,4,5,6,7,8,9,10]
+// let arr = []
+// for(let i =0;i<10;i=i+3){
+//     let b = a.slice(i,i+3)
+//     arr.push(b)
+// }
+// console.log(arr);

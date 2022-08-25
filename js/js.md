@@ -360,9 +360,29 @@
     - Object.values() 属性值构成的数组
     - Object.getOwnPropertySymbols() 返回对象内的所有Symbol属性
 
+## js延迟加载的方式
+1. defer属性（不能控制加载的顺序）
+    - 脚本会被延迟到整个页面都解析完毕之后再执行
+    - **在 script 元素中设置 defer 属性，等于告诉浏览器立即下载，但延迟执行。**
+2. async 属性（不能控制加载的顺序）
+    - 不让页面等待脚本下载和执行，从而异步加载页面其他内容。
+3. 动态创建DOM方式
+    - 将创建DOM的script脚本放置在标签前， 接近页面底部
+4. 使用setTimeout延迟方法
+
+
 ## DOM相关操作
 
 - 节点创建型API
-    - **createElement**通过传入指定的一个标签名来创建一个元素，只是创建出来，并未添加到HTML文档中，要调用appendChild或insertBefore等方法将其添加到HTML文档树中。
-    - 
-
+    - **createElement**
+    - **createTextNode**
+- 删除
+    - **removeChild**
+    - **remove**
+- 查找
+    - **getElementById**
+    - **querySelector**
+    - **querySelectorAll**
+    - **parentNode**
+- 修改
+    - **replaceChild**

@@ -80,3 +80,24 @@
 - 在setTimeout，Promise.then等异步事件中
     - setState和useState是同步执行的（立即更新state的结果）
     - 多次执行setState和useState，每一次的执行setState和useState，都会调用一次render
+
+## HashRouter和BrowserRouter
+
+- hash模式--HashRouter
+    - hash 指的是地址中 # 号以及后面的字符。称为散列值。
+    - 散列值不会随请求发送到服务器端的，所以**改变hash,不会重新加载界面**。
+    - 监听onhashchange事件，hash改变时，可以**通过window.location.hash来获取和设置hash值**。
+    - location.hash值的变化直接反应在浏览器的地址栏。
+
+- history模式--BrowserRouter
+    - History对象就是一个堆栈。
+    - History.back：移动上一个网址，等同于浏览器的后退。
+    - History.forward:移动到下一个网址，等同于浏览器前进。
+    - History.go:接受一个参数，以当前网页为基准，来进行跳转。默认history.go(0),刷新当前界面。
+    - History.pushState():往history堆栈中添加一条记录。不会刷新界面，只会导致History对象变化，地址栏发生变化。
+    - History.replaceState():是替换当前history堆栈中最上层的记录。也是不会刷新界面，只会是Histoty对象变化，地址栏发生变化。
+
+## useEffect第二个参数[]如何影响fn的执行？
+- `无参数`：mount，update
+- `[]`：mount
+- `[值]`: mount，值变化
